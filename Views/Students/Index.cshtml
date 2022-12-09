@@ -1,0 +1,15 @@
+﻿@model IEnumerable<Student>
+@foreach (var student in Model) {
+    <div class="border border-2 border-dark mb-2">
+        <div class="p-2">
+            <h6>@student.FirstName @student.LastName</h6>
+            <p>Student's ID': @student.Id</p>
+            <p>Date of birth: @student.DateOfBirth.ToShortDateString()</p>
+            <a class="btn btn-warning" asp-action="Edit" asp-route-id=@student.Id>Edit</a>
+            <a class="btn btn-danger" asp-action="Delete" asp-route-id=@student.Id>Delete</a>
+        </div>
+    </div>
+}
+    <div>
+        <a class="btn btn-success m-2" asp-action="Create">Add new student</a>
+    </div>
